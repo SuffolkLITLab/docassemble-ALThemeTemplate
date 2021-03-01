@@ -1,3 +1,8 @@
+comment: |
+  This file lets you quickly test changes you made in your organization package.
+  
+  You will need to install this package in order to test changes to your logo
+  (since the logo URL uses a static path).
 ---
 include:
   - docassemble.AssemblyLine:al_package.yml
@@ -14,3 +19,4 @@ code: |
 mandatory: True
 code: |
   al_intro_screen
+  

@@ -1,0 +1,16 @@
+---
+include:
+  - docassemble.AssemblyLine:al_package.yml
+  - custom_organization.yml
+---
+comment: |
+  These are placeholder values for some of the mandatory values that need to
+  be defined.
+code: |
+  al_form_type = "starts_case"
+  form_approved_for_email_filing = False
+  interview_short_title = "Custom organization demo"
+---
+mandatory: True
+code: |
+  al_intro_screen

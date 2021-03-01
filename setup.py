@@ -43,9 +43,9 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.ALGenericJurisdiction',
-      version='0.0.1',
+      version='0.0.2',
       description=("Generic package that you can customize for your own state/jurisdiction's need"),
-      long_description="# docassemble.ALGenericJurisdiction\n\nGeneric package that you can customize for your own state/jurisdiction's need\n\n## Author\n\nSystem Administrator, admin@admin.com\n\n",
+      long_description="# docassemble.ALGenericJurisdiction\r\n\r\nGeneric package that you can customize for your own state/jurisdiction's need\r\n\r\n## Author\r\n\r\nSystem Administrator, admin@admin.com\r\n\r\n",
       long_description_content_type='text/markdown',
       author='System Administrator',
       author_email='admin@admin.com',

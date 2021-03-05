@@ -1,0 +1,29 @@
+---
+modules:
+  - .al_courts
+---
+objects:
+  - court_list: ALCourtLoader.using(file_name='court_sample.xlsx')
+---
+mandatory: True
+question: |
+  Pick a court
+fields:
+  - Court: court_index
+    code: court_list.filter_courts(None)
+---
+code: |
+  the_court = court_list.as_court('the_court',court_index)
+  the_court.geolocate()
+---
+mandatory: True
+question: |
+  Display court info
+subquestion: |
+  ${ the_court }
+  
+  ${ the_court.address.block() }
+  
+  ${ the_court.description }
+  
+  ${ map_of(the_court) }

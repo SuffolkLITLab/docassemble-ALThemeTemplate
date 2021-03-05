@@ -18,12 +18,12 @@ code: default_repository = 'docassemble-ALGenericJurisdiction'
 code: default_github_user_or_organization = 'suffolklitlab'
 ---
 comment: |
+  List the github user names and organizations that this script will be allowed 
+  to create issues on.
+  
   For security reasons, you should limit
   the ability of this script to create issues to any repositories
-  that you control.
-  
-  List the github user names that this script will be allowed to create
-  issues on.
+  that you control.  
 variable name: allowed_github_users
 data:
   - "suffolklitlab"

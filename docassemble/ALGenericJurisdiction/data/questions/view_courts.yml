@@ -10,10 +10,11 @@ question: |
   Pick a court
 fields:
   - Court: court_index
-    code: court_list.filter_courts(None)      
+    code: court_list.filter_courts(None)
 ---
 code: |
   the_court = court_list.as_court('the_court',court_index)
+  the_court.geolocate()
 ---
 mandatory: True
 question: |

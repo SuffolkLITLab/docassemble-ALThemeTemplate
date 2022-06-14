@@ -1,43 +1,85 @@
 ---
 comment: |
-  You may want to create a state-specific package that is shared across
-  multiple organizations.
-  
-  It could include things like your list of courts. This package just combines
-  all of the common files into one package for you to quickly see
-  what you will modify.
-#include:
-#  - docassemble.ALMyState:al_mystate.yml
+  Use this file as a model for your own organization's branding package. You can
+  also place custom versions of questions from ql_baseline.yml into this file.
+
+  Then, reference this package in your own interview YAML file. For example,
+  if you added this file to a package named "ALMyState", you might have 
+  an include block in each interview that looks like this:
+    ---
+    include:
+      - docassemble.ALMyState:custom_organization.yml
 ---
-modules:
-  - .al_courts
----
+###################### Logo and basic settings ###########################
 objects:
-  # the court database can be an Excel, CSV, or JSON data file
-  - all_courts: ALCourtLoader.using(file_name="court_sample.xlsx")
----  
-comment: |
-  You will want to upload a new icon to the "static" folder and update the path
-  in the "logo" area below, as well as updating each metadata field below.
-  
-  If you want to use the sample icon, you need to accept the license here: 
-  https://iconmonstr.com/license/
+  # The logo can be a PNG, GIF, SVG or JPG. About 40x40 px is recommended.
+  # place the logo in the Docassemble "static" folder
+  - al_logo: DAStaticFile.using(filename="iconmonstr-script-5-64.png")
+---
+##################### Title and basic information ########################
+# See: https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/framework/magic_variables
+---
+# Metadata is used in the tab and navigation bar
 metadata:
   title: |
     File legal forms online
   short title: |
     File forms  
-  title url: https://www.example.com
-  logo: |
-    <img src="/packagestatic/docassemble.ALGenericJurisdiction/iconmonstr-script-5-64.png" class="ma_icon" alt="Logo"><div class="title">File legal forms online</div>
   exit url: |
     https://www.example.com
+---
+code: |
+  AL_ORGANIZATION_TITLE = "My State Forms"
+---  
+code: |
+  AL_ORGANIZATION_HOMEPAGE = "https://mystate.example.com"
+---
+code: |
+  AL_DEFAULT_COUNTRY = "US"
+---
+code: |
+  AL_DEFAULT_STATE = "MA"
+---
+code: |
+  AL_DEFAULT_LANGUAGE = "en"  
 ---
 features:
   question help button: True
   question back button: True
   progress bar: True
+  navigation: True
   css: colors.css
+---
+########################### Bootstrap theme ##############################
+comment: |
+  If you would like to customize:
+  - button style
+  - fonts
+  - theme colors
+
+  You should generate a bootstrap theme file instead of overriding individual
+  CSS properties.
+
+  Instructions available here:
+  https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/customization/overview/
+
+  Once you generate the theme file: 
+  
+  1. name it something like "my_theme.css"
+  2. Upload it to the "static" folder
+  3. add a block like this:
+  ---
+  features:
+    bootstrap theme: my_theme.css
+---
+########################### GitHub Feedback ##############################
+---
+code: |
+  # This points the feedback link to the feedback.yml file in this package.
+  # E.g., docassemble.ALMyState
+  feedback_form = f"{ user_info().current_package }:feedback.yml"
+---
+########################### Intro screen #################################
 ---
 id: basic questions intro screen
 decoration: form-lineal
@@ -77,7 +119,7 @@ fields:
   # If you prefer, you can link to a static website by deleting everything
   # in the ${ } tags and replacing with a static website, like 
   # https://example.com/tos
-  - To continue, you must accept our [terms of use](${interview_url(i=user_info().package + ':terms_of_use.yml')}){:target="_blank"}: acknowledged_information_use
+  - To continue, you must accept our [terms of use](${interview_url(i=f"{ user_info().current_package }:terms_of_use.yml") }){:target="_blank"}: acknowledged_information_use
     datatype: checkboxes
     none of the above: False    
     minlength: 1
@@ -96,7 +138,24 @@ right: |
   Saved answers available!  
   
   ${action_button_html(url_action('load_answer'), icon="folder-open", label=word("View answers"), size="sm" )}
-  % endif    
+  % endif
+---
+######################## Court selection ##############################
+# This section allows you to create your own custom database of courts.
+# It can be customized to fit your needs
+---
+comment: |
+  The al_courts.py file in this package is a simple frontend to an Excel spreadsheet
+  with court names and addresses.
+
+  You may want to edit the Python code to add additional features, such as address
+  lookup, or to move the spreadsheet into the database for performance reasons.
+modules:
+  - .al_courts
+---
+objects:
+  # the court database can be an Excel, CSV, or JSON data file
+  - all_courts: ALCourtLoader.using(file_name="court_sample.xlsx")
 ---
 template: how_to_pick_court_help_template
 content: |

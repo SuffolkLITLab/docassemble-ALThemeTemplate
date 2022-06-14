@@ -1,34 +1,14 @@
-/*.navbar {
-    height: 60px;
-}
-*/
+/* .bg-dark is the color used for the navbar. Replace with your theme color. */
+/* .bg-dark {
+    background-color: #002e60 !important;    
+} */
 
-.ma_icon {
-    position: relative;
-    height: 40px;
-    width: 40px;
-    margin-right: 15px;
+.al-logo img {
+    max-height: 40px;
 }
 
-.title {
-    display: inline;
-    position: relative;
-    top: 2px;
+.al-title {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-@media only screen and (max-width: 766px) {
-    .title {
-        display: none
-    }
-  /*
-    .ma_icon {
-        top: -4px;
-    }
-  */
 }
 
 .da-pad-for-navbar {
@@ -39,24 +19,12 @@
     top: 70px;
 }
 
-blockquote {
-    background: #f9f9f9;
-    border-left: 10px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
-    font-size: .75em;
-}
-
-blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-
-blockquote p {
-    display: inline;
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }

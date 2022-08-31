@@ -33,3 +33,8 @@ and style, add an "include" line like this:
 include:
   - docassemble.MyBrand:my_brand.yml
 ```
+
+## Custom_organization_demo.yml
+
+The `custom_organization_demo.yml` file can be used to help you test the
+changes as you go.

@@ -1,0 +1,13 @@
+######################
+# List of available configuration options that this package supplies
+package name: ALThemeTemplate
+jurisdiction_choices:
+  - description: ALThemeTemplate brand
+    dependency: "docassemble.ALThemeTemplate"
+    include_name: "docassemble.ALThemeTemplate:custom_organization.yml"
+    default: True
+    state: ANY
+    country: US
+organization_choices: []
+output_mako:
+  My brand output: output.mako

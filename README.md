@@ -2,7 +2,15 @@
 
 Formerly `ALGenericJurisdiction`
 
-Generic package that you can customize for your own state/jurisdiction's need
+Generic package that you can customize for your own state/jurisdiction's need.
+
+It can be used to:
+
+1. Contain shared questions, so you can standardize the way questions
+are asked in your organization's interviews
+1. Provide a standardized look and feel, including colors, fonts, and logos
+1. Provide a custom output template for use in the Weaver, which can
+control the order and contents of the generated interview YAML files
 
 ## How to use this package
 
@@ -18,7 +26,7 @@ Create a new Docassemble
 
 Install the package on your server.
 
-Then, in your interviews that you want to use this package's brand
+Then, assuming you name the new package "MyBrand" and you renamed the "custom_organization.yml" file "my_brand.yml", in your interviews that you want to use this package's brand
 and style, add an "include" line like this:
 
 ```yaml

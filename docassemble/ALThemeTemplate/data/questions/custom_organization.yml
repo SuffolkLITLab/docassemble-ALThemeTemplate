@@ -82,7 +82,6 @@ code: |
 ########################### Intro screen #################################
 ---
 id: basic questions intro screen
-decoration: form-lineal
 question: |
   ${interview_short_title}: File Legal Forms Online
 subquestion: |

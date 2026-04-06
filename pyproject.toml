@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docassemble.ALThemeTemplate"
+version = "0.1.0"
+description = "Generic package that you can customize for your own state/jurisdiction's need."
+readme = "README.md"
+authors = [
+    { name="Suffolk Legal Innovation and Technology Lab", email="litlab@suffolk.edu" },
+]
+dependencies = []
+license = "MIT"
+license-files = ["LICENSE*"]
+
+[project.urls]
+Homepage = "https://docassemble.org"
+
+[tool.setuptools.packages.find]
+where = ["."]

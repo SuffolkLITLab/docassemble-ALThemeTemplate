@@ -17,7 +17,7 @@ objects:
   - al_logo: DAStaticFile.using(filename="iconmonstr-script-5-64.png")
 ---
 ##################### Title and basic information ########################
-# See: https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/framework/magic_variables
+# See: https://assemblyline.suffolklitlab.org/docs/components/AssemblyLine/magic_variables
 ---
 # Metadata is used in the tab and navigation bar
 metadata:
@@ -61,7 +61,7 @@ comment: |
   CSS properties.
 
   Instructions available here:
-  https://suffolklitlab.org/docassemble-AssemblyLine-documentation/docs/customization/overview/
+  https://assemblyline.suffolklitlab.org/docs/components/ALThemeTemplate/overview#creating-a-custom-theme
 
   Once you generate the theme file: 
   

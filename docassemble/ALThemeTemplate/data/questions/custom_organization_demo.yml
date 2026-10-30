@@ -24,6 +24,7 @@ code: |
   trial_court
   trial_court_demo
 ---
+id: selected_court
 event: trial_court_demo
 question: |
   Here is the court you selected

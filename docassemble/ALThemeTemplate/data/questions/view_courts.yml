@@ -6,6 +6,11 @@ objects:
   - court_list: ALCourtLoader.using(file_name='court_sample.xlsx')
 ---
 mandatory: True
+code: |
+  court_index
+  display_court_info
+---
+id: pick a court
 question: |
   Pick a court
 fields:
@@ -16,7 +21,8 @@ code: |
   the_court = court_list.as_court('the_court',court_index)
   the_court.geolocate()
 ---
-mandatory: True
+id: display_court_info
+event: display_court_info
 question: |
   Display court info
 subquestion: |
